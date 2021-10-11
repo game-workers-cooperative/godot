@@ -15,7 +15,7 @@ class Bullet : public Object {
 	float time;
 	bool _popped;
 
-	RefCounted<BulletType> type;
+	Ref<BulletType> type;
 
 	Vector2 direction;
 	Vector2 position;
@@ -31,7 +31,7 @@ class Bullet : public Object {
 		static void _bind_methods();
 
 	public:
-		void spawn(const RefCounted<BulletType> &p_type, const Vector2 &p_position, const Vector2 &p_direction);
+		void spawn(const Ref<BulletType> &p_type, const Vector2 &p_position, const Vector2 &p_direction);
 		
 		void update(float delta);
 
@@ -43,8 +43,8 @@ class Bullet : public Object {
 		void set_time(float p_time);
 		float get_time() const;
 
-		void set_type(const RefCounted<BulletType> &p_type);
-		RefCounted<BulletType> get_type() const;
+		void set_type(const Ref<BulletType> &p_type);
+		Ref<BulletType> get_type() const;
 
 		void set_direction(const Vector2 &p_direction);
 		Vector2 get_direction() const;
